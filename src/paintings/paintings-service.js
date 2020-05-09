@@ -4,7 +4,6 @@ const PaintingsService = {
 
   },
   insertPainting(knex, name) {
-    //console.log(name);
     return knex
       .insert(name)
       .into("paintings")

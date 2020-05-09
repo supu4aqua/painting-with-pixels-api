@@ -132,13 +132,8 @@ describe(`POST /api/cells`, () => {
         .expect(201)
         .expect(res => {
           expect(res.body.name).to.eql(newCell.name)
-        //  expect(res.body.style).to.eql(newArticle.style)
          expect(res.body.content).to.eql(newCell.content)
          expect(res.body.folderid).to.eql(expectedCell.folderid)
-        //  expect(res.body).to.have.property('id')
-        //  expect(res.headers.location).to.eql(`/articles/${res.body.id}`)
-        //  const expected = new Date().toLocaleString()
-        //  const actual = new Date(res.body.date_published).toLocaleString()
           expect(actual).to.eql(expected)
         })
         .then(res =>

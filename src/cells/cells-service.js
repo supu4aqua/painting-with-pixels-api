@@ -3,7 +3,6 @@ const CellsService = {
     return knex.select('*').from('cells')
   },
   insertCell(knex, newCell) {
-    //console.log(newCell);
     return knex
       .insert(newCell)
       .into('cells')
@@ -25,10 +24,6 @@ const CellsService = {
       .delete()
   },
   updateCell(knex, newCells) {
-  /*  console.log(newCell);
-  return knex('cells')
-      .where('id', '=', newCell.id)
-      .update(newCell)*/
      return knex.transaction(trx => {
           const queries = [];
           newCells.forEach(cell => {
@@ -43,9 +38,6 @@ const CellsService = {
               .then(trx.commit) // We try to execute all of them
               .catch(trx.rollback); // And rollback in case any of them goes wrong
       });
-
-
-
   },
 }
 

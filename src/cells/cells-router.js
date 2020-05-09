@@ -56,12 +56,6 @@ cellsRouter
         })
        CellsService.updateCell(req.app.get("db"), newCells.cells)
        .then(cells => {
-         /*console.log('Cells', JSON.stringify(cells));
-            const result = {
-
-              cells: cells.map(cell => serializeCell(cell))
-            }*/
-
             res
               .status(201)
               .json(cells);
@@ -69,8 +63,6 @@ cellsRouter
 
   .catch(next)
 })
-
-
 
 cellsRouter
   .route('/:cell_id')
@@ -125,27 +117,5 @@ cellsRouter
     .get((req, res, next) => {
       res.json(serializeCell(res.cell))
     })
-
-  /*cellsRouter
-    .route('/painting/:painting_id')
-    .all((req, res, next) => {
-      CellsService.getByPaintingId(
-        req.app.get('db'),
-        req.params.painting_id
-      )
-        .then(cell => {
-          if (!cell) {
-            return res.status(404).json({
-              error: { message: `Painting doesn't exist in cells` }
-            })
-          }
-          res.cell = cell
-          next()
-        })
-        .catch(next)
-    })
-    .get((req, res, next) => {
-      res.json(serializeCell(res.cell))
-    })*/
 
 module.exports = cellsRouter

@@ -31,12 +31,9 @@ paintingsRouter
       .catch(next);
   })
   .post(jsonParser, (req, res, next) => {
-    //  const { name, cells } = req.body
     const { name, cells } = req.body;
     const newPainting = { name };
     const newCells = { cells };
-
-    //console.log(newCells.cells);
 
     for (const [key, value] of Object.entries(newPainting))
       if (value == null)
@@ -46,10 +43,6 @@ paintingsRouter
 
     PaintingsService.insertPainting(req.app.get("db"), newPainting)
     .then(painting => {
-        //Cells will come from req and it will be array of objects
-        //Modify the cells and add painting id
-        //Insert the cells to cells table
-        //  cells ={1: {paintingid: painting.id, position: 1, color: 'black'}}
         newCells.cells = newCells.cells.map(function(el) {
           var Cells = Object.assign({}, el);
           Cells.paintingid = painting.id;
@@ -62,7 +55,6 @@ paintingsRouter
               painting: serializePainting(painting),
               cells: cells.map(cell => serializeCell(cell))
             }
-
             res
               .status(201)
               .json(result);
@@ -84,22 +76,10 @@ paintingsRouter
           });
         }
         res.painting = painting;
-
-      /* console.log(res.painting);
-       CellsService.getByPaintingId(req.app.get("db"), req.params.painting_id)
-         .then(cell => {
-           if (!cell) {
-             return res.status(404).json({
-               error: { message: `Painting doesn't exist in cell table` }
-             });
-           }
-           res.cell = cell;
-           console.log(res.cell);*/
         next();
       })
       .catch(next);
   })
-//})
   .get((req, res, next) => {
     res.json(serializePainting(res.painting));
   })
