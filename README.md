@@ -1,26 +1,17 @@
-# Express Boilerplate!
+<a href="https://painting-with-pixels-app.mesupi.now.sh">Painting With Pixels</a>
 
-This is a boilerplate project used for starting new projects!
+> Color the pixels and create a painting on 3x3 grid
+> User can create or view any existing painting. Color can be selected from a palette of 10 colors.
+> Each painting have 9 cells represting one of the colors of the grid.
 
-## Set up
+> Go to live project <a href="https://painting-with-pixels-app.mesupi.now.sh">here</a>
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+> API can be accessed <a href="https://afternoon-citadel-97734.herokuapp.com/">here</a>
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+> View all the cells on the server <a href="https://afternoon-citadel-97734.herokuapp.com/api/cells">here</a>
+> View all the paintings on the server <a href="https://afternoon-citadel-97734.herokuapp.com/api/paintings">here</a>
 
-## Scripts
-
-Start the application `npm start`
-
-Start nodemon for the application `npm run dev`
-
-Run the tests `npm test`
-
-## Deploying
-
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+> Built with 
+  - React.js
+  - Node
+  - Express
