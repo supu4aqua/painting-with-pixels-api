@@ -4,8 +4,6 @@ Where users can paint and create a painting on 3x3 painting grid
 
 <a href="https://painting-with-pixels-app.mesupi.now.sh/" target="_blank">Live Version</a>
 
-[![Build Status](https://www.travis-ci.com/fastlain/developeer-api.svg?branch=master)](https://www.travis-ci.com/fastlain/developeer-api)
-
 This repo contains the server-side API built with Node/Express. Looking for the front-end DeveloPeer Client? 
 **[Click Here](https://github.com/supu4aqua/painting-with-pixels-app)**
 
